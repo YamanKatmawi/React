@@ -22,4 +22,10 @@ class Text extends React.Component {
     );
   }
 }
-export default Text;
+class Hello extends React.Component {
+  render() {
+    return <h1>Hey I like React</h1>;
+  }
+}
+export { Text, Hello };
+// export default Text;
