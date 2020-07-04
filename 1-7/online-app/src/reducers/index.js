@@ -29,7 +29,46 @@ const allReducers = (state = {}, action) => {
           },
         },
       };
-
+    case "CHECKOUT":
+      return {
+        ...state,
+        cart: {},
+      };
+    case "REMOVE_ONE":
+      inventory = products[id].inventory;
+      quantity = product.quantity;
+      newCart = { ...cart };
+      delete newCart[id];
+      return {
+        ...state,
+        cart:
+          quantity > 1
+            ? { ...cart, [id]: { ...product, quantity: quantity - 1 } }
+            : newCart,
+        products: {
+          ...products,
+          [id]: {
+            ...product,
+            inventory: inventory + 1,
+          },
+        },
+      };
+    case "REMOVE_ALL":
+      inventory = products[id].inventory;
+      quantity = product.quantity;
+      newCart = { ...cart };
+      delete newCart[id];
+      return {
+        ...state,
+        products: {
+          ...products,
+          [id]: {
+            ...product,
+            inventory: inventory + quantity,
+          },
+        },
+        cart: newCart,
+      };
     default:
       return state;
   }

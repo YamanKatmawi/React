@@ -4,7 +4,24 @@ body {
   justify-content: center;
   align-items: center;
 }
-ul {
+nav {
+  background-color: orange;
+  width: 75vw;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+}
+nav li {
+  list-style: none;
+  color: white;
+}
+nav li:hover {
+  background-color: lightgray;
+  color: orange;
+}
+.product {
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -13,13 +30,16 @@ ul {
   width: 80vw;
   height: 30vh;
 }
-li {
+.product li {
   list-style: none;
   border: 1px solid orange;
   text-align: center;
   padding: 5px;
   width: 10rem;
   height: 12rem;
+}
+a {
+  text-decoration: none;
 }
 button {
   background-color: lightblue;
@@ -29,4 +49,7 @@ button {
 
 i {
   font-size: 2rem;
+}
+.test {
+  background-color: orangered;
 }
